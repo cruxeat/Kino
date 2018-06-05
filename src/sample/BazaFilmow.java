@@ -5,9 +5,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.cell.TextFieldTableCell;
 
-import java.awt.event.ActionEvent;
+import javafx.event.ActionEvent;
 
 public class BazaFilmow implements HierarchicalController<MainController> {
 
@@ -21,18 +20,6 @@ public class BazaFilmow implements HierarchicalController<MainController> {
 
     public TableView<Film> tablica;
     private MainController parentController;
-
-
-    public void dodaj(ActionEvent actionEvent) {
-        Film film = new Film();
-        film.setName(name.getText());
-        film.setDescript(descript.getText());
-        film.setDur(dur.getText().isEmpty() ? null : Double.parseDouble(dur.getText()));
-        film.setLimitAge((limitAge.getText().isEmpty() ? null : Double.parseDouble(limitAge.getText())));
-        tablica.getItems().add(film);
-    }
-
-
     @Override
     public MainController getParentController() {
         return parentController;
@@ -41,9 +28,13 @@ public class BazaFilmow implements HierarchicalController<MainController> {
     @Override
     public void setParentController(MainController parent) {
         this.parentController = parentController;
-        tablica.setItems(parentController.getDataContrainer().getFilmy());
+        tablica.setItems(parentController.getDataContainer().getFilmy());
     }
 
+    public void usunZmiany() {
+        tablica.getItems().clear();
+        tablica.getItems().addAll(parentController.getDataContainer().getFilmy());
+    }
 
     public void initialize() {
         for (TableColumn<Film, ?> filmTableColumn : tablica.getColumns()) {
@@ -67,5 +58,12 @@ public class BazaFilmow implements HierarchicalController<MainController> {
 
     public void synchronizuj(javafx.event.ActionEvent actionEvent) {
         parentController.getDataContainer().setFilmy(tablica.getItems());
+    }
+
+
+    public void usun(ActionEvent actionEvent) {
+    }
+
+    public void dodaj(ActionEvent actionEvent) {
     }
 }

@@ -1,11 +1,14 @@
 package sample;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 
-import java.awt.event.ActionEvent;
 import java.io.IOException;
+
+
+
 
 public class MainController implements HierarchicalController<MainController> {
     @Override
@@ -18,22 +21,14 @@ public class MainController implements HierarchicalController<MainController> {
 
     }
 
-
-
-
-
     public Pane pane;
 
     protected DataContainer dataContainer;
 
-    public DataContainer getDataContrainer() {
-        return dataContainer;
-    }
-
     public MainController() { dataContainer = new DataContainer();
     }
 
-    public void loadIntoPane(String fxml) {
+    private void loadIntoPane(String fxml) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
         try {
             final BorderPane load = loader.load();
@@ -41,21 +36,17 @@ public class MainController implements HierarchicalController<MainController> {
             pane.getChildren().add(load);
             HierarchicalController<MainController> daneController = loader.getController();
             daneController.setParentController(this);
-
-
-        }
-        catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
-
         }
+
     }
 
     public DataContainer getDataContainer() {
         return dataContainer;
     }
 
-    public void bazaFilmow(ActionEvent actionEvent) {
-        loadIntoPane("BazaFilmow.fxml");
+    public void bazaFilmow(ActionEvent actionEvent) { loadIntoPane("BazaFilmow.fxml");
     }
 
 

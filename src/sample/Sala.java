@@ -2,7 +2,7 @@ package sample;
 
 import java.io.Serializable;
 
-public class Sala implements Serializable{
+public class Sala implements Serializable {
     protected String number;
     protected Double size;
     protected String type;
@@ -10,25 +10,22 @@ public class Sala implements Serializable{
     public String getNumber(){
         return number;
     }
-
     public void setNumber (String number){
-        number = this.number;
+        this.number = number;
     }
 
     public Double getSize(){
         return size;
     }
-
     public void setSize(Double size){
-        size = this.size;
+        this.size = size;
     }
 
     public String getType(){
         return type;
     }
-
     public void setType(String type){
-        type = this.type;
+        this.type =  type;
     }
 
 

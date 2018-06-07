@@ -12,7 +12,7 @@
       <TableView fx:id="tablica" prefHeight="400.0" prefWidth="300.0" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn id="name" prefWidth="104.0" text="nazwa" />
-          <TableColumn id="descript" prefWidth="114.99999237060547" text="opis" />
+          <TableColumn id="description" prefWidth="114.99999237060547" text="opis" />
             <TableColumn id="dur" minWidth="0.0" prefWidth="127.0" text="czas trwania" />
             <TableColumn id="limitAge" prefWidth="153.0" text="limit wiekowy" />
         </columns>
@@ -22,11 +22,14 @@
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
             <TextField fx:id="name" promptText="Nazwa:" />
-            <TextField fx:id="descript" promptText="Opis:" />
+            <TextField fx:id="description" promptText="Opis:" />
             <TextField fx:id="dur" promptText="Czas trwania:" />
             <TextField fx:id="limitAge" layoutX="10.0" layoutY="60.0" promptText="Limit wiekowy:" />
-            <Button  mnemonicParsing="false" onAction="#dodaj" text="Dodaj" />
-            <Button  mnemonicParsing="false" onAction="#usun" text="Usun" />
+            <Button  fx:id="add" mnemonicParsing="false" onAction="#dodaj" text="Dodaj" />
+            <Button  fx:id="delete" mnemonicParsing="false" onAction="#usun" text="Usun" />
+             <Button  fx:id="zapisz" mnemonicParsing="false" onAction="#zapisz" text="Zapisz" />
+             <Button  fx:id="wczytaj" mnemonicParsing="false" onAction="#wczytaj" text="Wczytaj" />
+             <Button  fx:id="usunZmiany" mnemonicParsing="false" onAction="#usunZmiany" text="Usun zmiany" />
          </children></VBox>
    </right>
 </BorderPane>

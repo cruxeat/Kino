@@ -121,7 +121,7 @@ public class BazaFilmow implements HierarchicalController<MainController> {
 
     public void zapisz(ActionEvent actionEvent) {
         ArrayList<Film> filmyList = new ArrayList<>(tablica.getItems());
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("data.obj"))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("dataF.obj"))) {
             oos.writeObject(filmyList);
             oos.close();
         } catch (IOException e) {
@@ -132,7 +132,7 @@ public class BazaFilmow implements HierarchicalController<MainController> {
 
     public void wczytaj(ActionEvent actionEvent) {
         ArrayList<Film> filmyList;
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("data.obj"))) {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("dataF.obj"))) {
             filmyList = (ArrayList<Film>) ois.readObject();
             tablica.getItems().clear();
             tablica.getItems().addAll(filmyList);

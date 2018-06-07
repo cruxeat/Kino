@@ -23,7 +23,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <Button mnemonicParsing="false" text="Baza filmow">
+                <Button mnemonicParsing="false" onAction="#bazaFilmow" text="Baza filmow">
                     <font>
                         <Font name="Comic Sans MS" size="18.0" />
                     </font>

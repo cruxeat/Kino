@@ -25,6 +25,9 @@
                 <TextField fx:id="type" promptText="Typ:" />
                 <Button fx:id="add" mnemonicParsing="false" onAction="#dodaj" text="Dodaj" />
                 <Button fx:id="delete" mnemonicParsing="false" onAction="#usun" text="Usun" />
+                <Button  fx:id="zapisz" mnemonicParsing="false" onAction="#zapisz" text="Zapisz" />
+                <Button  fx:id="wczytaj" mnemonicParsing="false" onAction="#wczytaj" text="Wczytaj" />
+                <Button  fx:id="usunZmiany" mnemonicParsing="false" onAction="#usunZmiany" text="Usun zmiany" />
             </children></VBox>
     </right>
 </BorderPane>

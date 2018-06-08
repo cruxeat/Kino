@@ -49,5 +49,8 @@ public class MainController implements HierarchicalController<MainController> {
     public void bazaSal(ActionEvent actionEvent) { loadIntoPane("BazaSal.fxml");
     }
 
+    public void bazaSeansow(ActionEvent actionEvent) { loadIntoPane("BazaSeansow.fxml");}
+
+
 
 }

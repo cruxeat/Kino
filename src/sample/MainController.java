@@ -18,12 +18,16 @@ public class MainController implements HierarchicalController<MainController> {
 
     }
 
+
+
     public Pane pane;
 
     protected DataContainer dataContainer;
 
     public MainController() { dataContainer = new DataContainer();
     }
+
+
 
     private void loadIntoPane(String fxml) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
@@ -42,6 +46,10 @@ public class MainController implements HierarchicalController<MainController> {
     public DataContainer getDataContainer() {
         return dataContainer;
     }
+
+
+
+
 
     public void bazaFilmow(ActionEvent actionEvent) { loadIntoPane("BazaFilmow.fxml");
     }

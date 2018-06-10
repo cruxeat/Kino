@@ -1,15 +1,20 @@
 package sample;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.ComboBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.util.StringConverter;
 
 import java.io.*;
 import java.util.ArrayList;
+
+
 
 public class BazaSeansow implements HierarchicalController<MainController> {
 
@@ -34,7 +39,7 @@ public class BazaSeansow implements HierarchicalController<MainController> {
     }
 
     @Override
-    public void setParentController(MainController parent) {
+    public void setParentController(MainController parentController) {
         this.parentController = parentController;
         tablica.setEditable(true);
         tablica.setItems(parentController.getDataContainer().getSeanse());
@@ -58,10 +63,22 @@ public class BazaSeansow implements HierarchicalController<MainController> {
             } else if ("numberSala".equals(seansTableColumn.getId())) {
                 TableColumn<Seans, String> salaColumn = (TableColumn<Seans, String>) seansTableColumn;
                 salaColumn.setCellValueFactory(new PropertyValueFactory<>("numberSala"));
-                salaColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+
+                //ObservableList<String> optionSal = parentController.getDataContainer().wezNumberSale(parentController.getDataContainer().getSale());
+
+                ObservableList<String> optionSal = parentController.getDataContainer().getNumberSale();
+
+
+                salaColumn.setCellValueFactory(ComboBoxTableCell.forTableColumn(optionSal));
+
+
+
+
                 salaColumn.setOnEditCommit((val) -> {
-                    val.getTableView().getItems().get(val.getTablePosition().getRow()).setNumberSala(val.getNewValue());
+                    val.getTableView().getItems().get(val.getTablePosition().getRow()).setNameFilm(val.getNewValue());
                 });
+
+
 
             }
             else if ("godzina".equals(seansTableColumn.getId())) {

@@ -31,7 +31,7 @@ public class BazaFilmow implements HierarchicalController<MainController> {
     }
 
     @Override
-    public void setParentController(MainController parent) {
+    public void setParentController(MainController parentController) {
         this.parentController = parentController;
         tablica.setEditable(true);
         tablica.setItems(parentController.getDataContainer().getFilmy());

@@ -7,6 +7,7 @@ public class Seans implements Serializable {
     protected String numberSala;
     protected String data;
     protected String godzina;
+    protected Sala sala;
 
 
     public String getnameFilm(){
@@ -20,7 +21,7 @@ public class Seans implements Serializable {
         return numberSala;}
 
     public void setNumberSala(String numberSala){
-        this.numberSala = numberSala;}
+        this.numberSala = sala.getNumber();}
 
     public String getData(){
         return data;

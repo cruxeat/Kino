@@ -1,6 +1,7 @@
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.cell.ComboBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -13,11 +14,11 @@ import java.util.ArrayList;
 
 public class BazaSeansow implements HierarchicalController<MainController> {
 
-    public ComboBox<String> film = new ComboBox<>(
-            FXCollections.observableArrayList(
-                    "koty", "psy"
-            )
-    );
+    public ComboBox film;
+
+
+
+
 //    public TextField sala;
 //    public TextField godzina;
 //    public TextField data;
@@ -31,6 +32,9 @@ public class BazaSeansow implements HierarchicalController<MainController> {
 //    public TableView<Seans> tablica;
     private MainController parentController;
 
+    public BazaSeansow() throws IOException, ClassNotFoundException {
+    }
+
     @Override
     public MainController getParentController() {
         return parentController;
@@ -43,7 +47,21 @@ public class BazaSeansow implements HierarchicalController<MainController> {
 //        tablica.setItems(parentController.getDataContainer().getSeanse());
     }
 
-    public void initialize() {
+    public void initialize() throws FileNotFoundException, ClassNotFoundException {
+        try {
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("dataF.obj"));
+            ArrayList<Film> filmyList = (ArrayList<Film>) ois.readObject();
+            ObservableList<Film> ofilmyList = FXCollections.observableArrayList(filmyList);
+
+            film.setItems(ofilmyList);
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
 
     }
 

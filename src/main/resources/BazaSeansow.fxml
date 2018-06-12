@@ -25,16 +25,16 @@
     <right>
         <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
             <ComboBox fx:id="film" prefWidth="150.0">
-                <items>
-                    <FXCollections fx:factory="observableArrayList">
-                        <String fx:value="Apple" />
-                        <String fx:value="Orange" />
-                        <String fx:value="Pear" />
-                    </FXCollections>
-                </items>
+                <!--<items>-->
+                    <!--<FXCollections fx:factory="observableArrayList">-->
+                        <!--<String fx:value="Apple" />-->
+                        <!--<String fx:value="Orange" />-->
+                        <!--<String fx:value="Pear" />-->
+                    <!--</FXCollections>-->
+                <!--</items>-->
             </ComboBox>
-            <ChoiceBox fx:id="cb" prefWidth="150.0">
-            </ChoiceBox>
+            <ComboBox fx:id="sala" prefWidth="150.0">
+            </ComboBox>
             <!--<TextField fx:id="sala" promptText="sala:" />-->
             <!--<TextField fx:id="godzina" promptText="Godzina:" />-->
             <!--<TextField fx:id="data" layoutX="10.0" layoutY="60.0" promptText="Data:" />-->

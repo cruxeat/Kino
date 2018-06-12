@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class BazaSeansow implements HierarchicalController<MainController> {
 
     public ComboBox film;
+    public ComboBox sala;
 
 
 
@@ -54,6 +55,13 @@ public class BazaSeansow implements HierarchicalController<MainController> {
             ObservableList<Film> ofilmyList = FXCollections.observableArrayList(filmyList);
 
             film.setItems(ofilmyList);
+
+            ObjectInputStream ois2 = new ObjectInputStream(new FileInputStream("dataS.obj"));
+            ArrayList<Sala> saleList = (ArrayList<Sala>) ois2.readObject();
+            ObservableList<Sala> osaleList = FXCollections.observableArrayList(saleList);
+
+            sala.setItems(osaleList);
+
 
 
         } catch (IOException e) {

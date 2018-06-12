@@ -1,5 +1,3 @@
-package sample;
-
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -100,7 +98,7 @@ public class BazaFilmow implements HierarchicalController<MainController> {
 
     }
 
-    public void synchronizuj(javafx.event.ActionEvent actionEvent) {
+    public void synchronizuj(ActionEvent actionEvent) {
         parentController.getDataContainer().setFilmy(tablica.getItems());
     }
 
@@ -110,11 +108,10 @@ public class BazaFilmow implements HierarchicalController<MainController> {
     }
 
     public void dodaj(ActionEvent actionEvent) {
-        Film film = new Film();
-        film.setName(name.getText());
-        film.setDescription(description.getText());
-        film.setLimitAge(limitAge.getText().isEmpty() ? null : Double.parseDouble(limitAge.getText()));
-        film.setDur(dur.getText().isEmpty() ? null : Double.parseDouble(dur.getText()));
+        Double limitAge = this.limitAge.getText().isEmpty() ? null : Double.parseDouble(this.limitAge.getText());
+        Double dur = this.dur.getText().isEmpty() ? null : Double.parseDouble(this.dur.getText());
+
+        Film film = new Film(name.getText(), description.getText(), limitAge, dur);
         tablica.getItems().add(film);
     }
 
@@ -137,10 +134,7 @@ public class BazaFilmow implements HierarchicalController<MainController> {
             tablica.getItems().clear();
             tablica.getItems().addAll(filmyList);
             ois.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-
-        } catch (ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 

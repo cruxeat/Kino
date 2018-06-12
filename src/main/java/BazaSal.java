@@ -1,5 +1,3 @@
-package sample;
-
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -82,7 +80,7 @@ public class BazaSal implements HierarchicalController<MainController> {
 
     }
 
-    public void synchronizuj(javafx.event.ActionEvent actionEvent) {
+    public void synchronizuj(ActionEvent actionEvent) {
         parentController.getDataContainer().setSale(tablica.getItems());
     }
 
@@ -117,10 +115,7 @@ public class BazaSal implements HierarchicalController<MainController> {
             tablica.getItems().clear();
             tablica.getItems().addAll(salaList);
             ois.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-
-        } catch (ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 

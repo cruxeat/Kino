@@ -10,12 +10,14 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
+//import javafx.scene.control.ComboBoxBase<LocalDate>
 
 public class BazaSeansow implements HierarchicalController<MainController> {
 
 
     public ComboBox film;
     public ComboBox sala;
+    public DatePicker dzien;
 
     public Button dodaj;
     public Button zaktualizuj;
@@ -48,6 +50,8 @@ public class BazaSeansow implements HierarchicalController<MainController> {
         seans.setNameFilm((Film) film.getValue());
         seans.setNumberSala((Sala) sala.getValue());
         tablica.getItems().add(seans);
+        film.getItems().remove(film.getValue());
+
     }
 
     public void synchronizuj(ActionEvent actionEvent) {

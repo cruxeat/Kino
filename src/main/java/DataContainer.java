@@ -8,18 +8,18 @@ public class DataContainer {
     @Getter @Setter protected ObservableList<Film> filmy;
     @Getter @Setter protected ObservableList<Sala> sale;
     @Getter @Setter protected ObservableList<Seans> seanse;
-    @Getter @Setter protected ObservableList<String> numberSale;
+    //@Getter @Setter protected ObservableList<String> numberSale;
     //protected ObservableList<String> optionSale;
 
     public DataContainer() {
         sale = FXCollections.observableArrayList();
         filmy = FXCollections.observableArrayList();
         seanse = FXCollections.observableArrayList();
-        numberSale = FXCollections.observableArrayList();
+        //numberSale = FXCollections.observableArrayList();
 
-        for (Sala sala : sale) {
-            numberSale.add(sala.getNumber());
-        }
+//        for (Sala sala : sale) {
+//            numberSale.add(sala.getNumber());
+//        }
 
     }
 

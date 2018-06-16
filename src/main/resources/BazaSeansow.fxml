@@ -13,17 +13,21 @@
 <?import javafx.scene.control.ChoiceBox?>
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BazaSeansow">
     <center>
-        <!--<TableView fx:id="tablica" prefHeight="400.0" prefWidth="300.0" BorderPane.alignment="CENTER">-->
-            <!--<columns>-->
-                <!--<TableColumn id="nameFilm" prefWidth="104.0" text="nazwa Filmu" />-->
-                <!--<TableColumn id="numberSala" prefWidth="114.99999237060547" text="numer Sali" />-->
-                <!--<TableColumn id="godzina" minWidth="0.0" prefWidth="127.0" text="godzina" />-->
-                <!--<TableColumn id="data" prefWidth="153.0" text="data" />-->
-            <!--</columns>-->
-        <!--</TableView>-->
+        <TableView fx:id="tablica" prefHeight="400.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn id="nameFilm" prefWidth="104.0" text="nazwa"/>
+                <TableColumn id="numberSala" prefWidth="114.99999237060547" text="opis"/>
+
+            </columns>
+        </TableView>
     </center>
+
     <right>
         <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <Button fx:id="dodaj" mnemonicParsing="false" onAction="#dodaj" text="Dodaj"/>
+            <Button fx:id="zaktualizuj" mnemonicParsing="false" onAction="#zaktualizuj" text="Zaktualizuj"/>
+            <!--<TextField fx:id="name" promptText="Nazwa:"/>-->
+            <!--<TextField fx:id="description" promptText="Opis:"/>-->
             <ComboBox fx:id="film" prefWidth="150.0">
                 <!--<items>-->
                     <!--<FXCollections fx:factory="observableArrayList">-->

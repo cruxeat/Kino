@@ -12,12 +12,18 @@
 <?import java.lang.String?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
+<?import tornadofx.control.DateTimePicker?>
+<?import javafx.scene.control.Label?>
+
+
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BazaSeansow">
     <center>
         <TableView fx:id="tablica" prefHeight="400.0" prefWidth="300.0" BorderPane.alignment="CENTER">
             <columns>
                 <TableColumn id="nameFilm" prefWidth="104.0" text="nazwa"/>
                 <TableColumn id="numberSala" prefWidth="114.99999237060547" text="opis"/>
+                <TableColumn id="data" prefWidth="114.99999237060547" text="data"/>
+                <TableColumn id="godzina" prefWidth="114.99999237060547" text="godzina"/>
 
             </columns>
         </TableView>
@@ -31,6 +37,11 @@
             <!--<TextField fx:id="description" promptText="Opis:"/>-->
             <DatePicker fx:id="dzien" prefWidth="150">
             </DatePicker>
+            <Label fx:id="timeLabel" prefWidth="50">
+            </Label>
+            <TextField fx:id = "godzina" prefWidth="150">
+            </TextField>
+
             <ComboBox fx:id="film" prefWidth="150.0">
                 <!--<items>-->
                     <!--<FXCollections fx:factory="observableArrayList">-->

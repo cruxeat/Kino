@@ -3,6 +3,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 @Data
 @Getter
@@ -11,7 +12,7 @@ import java.io.Serializable;
 public class Seans implements Serializable {
     protected Film nameFilm;
     protected Sala numberSala;
-    protected String data;
+    protected LocalDate data;
     protected String godzina;
 }
 
